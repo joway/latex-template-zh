@@ -4,7 +4,7 @@
 
 ## Demo
 
-[http://latex.joway.io/]()
+[http://latex.joway.io/](http://latex.joway.io/)
 
 ## Usage
 
