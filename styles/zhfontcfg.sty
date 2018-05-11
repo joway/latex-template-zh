@@ -1,0 +1,49 @@
+% xelatex 字体设定宏包(xelatex font settings for Chinese)
+% Tested under Mac OS X Snow Leopard(10.6.7) 
+
+\ProvidesPackage{zhfontcfg}
+\usepackage{fontspec,xunicode,xltxtra}
+\defaultfontfeatures{Mapping=tex-text} %如果没有它，会有一些 tex 特殊字符无法正常使用，比如连字符。
+
+% 中文断行(line break for Chinese)
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+
+% 行间距
+\linespread{1.5}
+% 段间距
+\setlength{\parskip}{0.5\baselineskip}
+
+% 首行不缩进
+\setlength{\parindent}{0pt}
+
+%将系统字体名映射为逻辑字体名称，主要是为了维护的方便
+% You can use fc-list command to find what font are available in your system.
+\newcommand\fontnamedongqing{Hiragino Sans GB} % Mac 冬青简体
+\newcommand\fontnamehei{Heiti SC}
+\newcommand\fontnamesong{STSong}
+\newcommand\fontnamekai{STKaiti}
+\newcommand\fontnameroman{Times}
+
+% 设置你的默认字体
+\setmainfont{\fontnamedongqing} % set default font
+%\setmainfont[BoldFont=\fontnamehei]{\fontnamesong}
+%\setsansfont[BoldFont=\fontnamehei]{\fontnamekai}
+%\setmonofont{\fontnamemono}
+
+%冬青
+\newfontfamily\DONGQING{\fontnamedongqing}
+\newcommand{\dongqing}[1]{{\DONGQING #1}}
+%宋体
+\newfontfamily\SONG{\fontnamesong}
+\newcommand{\song}[1]{{\SONG #1}}
+%楷体
+\newfontfamily\KAI{\fontnamekai}
+\newcommand{\kai}[1]{{\KAI #1}}
+%黑体
+\newfontfamily\HEI{\fontnamehei}
+\newcommand{\hei}[1]{{\HEI #1}}
+%英文
+\newfontfamily\ENF{\fontnameroman}
+\newcommand{\en}[1]{\,{\ENF #1}\,}
+\newcommand{\EN}{\,\ENF\,}
