@@ -8,7 +8,7 @@
 
 ## Demo
 
-[http://latex.joway.io/](http://latex.joway.io/)
+[https://latex.joway.io/](https://latex.joway.io/)
 
 ## Usage
 
